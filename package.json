@@ -1,0 +1,25 @@
+{
+  "name": "VONE",
+  "version": "1.0.0",
+  "description": "React",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YangMMO/VONE.git"
+  },
+  "keywords": [],
+  "author": "MMO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YangMMO/VONE/issues"
+  },
+  "homepage": "https://github.com/YangMMO/VONE#readme"
+}
