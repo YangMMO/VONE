@@ -65,7 +65,7 @@
 
 .follow h5 {
   float: left;
-  margin-right: 60px;
+  margin-right: 30px;
 }
 
 .follow ul,
@@ -87,7 +87,8 @@
 }
 
 .follow span {
-  margin-right: 50px;
+  padding: 10px 15px 10px 10px;
+  margin: 0 15px;
   color: #999;
 }
 

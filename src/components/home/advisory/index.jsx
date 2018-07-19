@@ -45,7 +45,7 @@ export default class Advisory extends Component {
           </ul>
         </div>
         <div className="follow chearfix">
-          <h5>关注我们:</h5>
+          <h5>关注我们：</h5>
           <ul>
             {
               data.map((item, i) => {
