@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 import './index.css';
 
 import { HOME_DATA, HOME_SERVICE } from '../../data/home-data';
+import { FOLLOW } from '../../data/nav-data';
+
 
 import PlateItem from './plate_item/index';
 import Service from './service/index';
+import Advisory from './advisory/index';
 
 export default class Home extends Component {
   render() {
     let home_data = JSON.parse(HOME_DATA);
     let home_service = JSON.parse(HOME_SERVICE);
+    let home_follow = JSON.parse(FOLLOW);
 
     return(
       <div>
@@ -30,6 +34,7 @@ export default class Home extends Component {
               )
           }
         }) }
+        <Advisory data={home_follow}/>
       </div>
     )
   }

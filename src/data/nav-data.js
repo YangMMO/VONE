@@ -37,3 +37,20 @@ module.exports.FUNCS = JSON.stringify([
     lists: {}
   }
 ])
+
+
+module.exports.FOLLOW = JSON.stringify([
+  {
+    title: 'Facebook', 
+    icon: 'iconfont icon-facebook',
+    link: 'https://facebook.com/'
+  }, {
+    title: 'Twitter',
+    icon: 'iconfont icon-twitter',
+    link: 'https://twitter.com/'
+  }, {
+    title: '新浪微博',
+    icon: 'iconfont icon-sina',
+    link: 'https://weibo.com/'
+  }
+])

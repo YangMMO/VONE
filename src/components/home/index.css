@@ -1,0 +1,33 @@
+.item-block > div:nth-child(1) {
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* item layout order */
+.item-block:nth-child(odd) .item-grid .item-image-block {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.item-block:nth-child(even) .item-grid .item-image-block {
+  grid-column-start: 3;
+  grid-column-end: 6;
+}
+
+.item-block:nth-child(odd) .item-grid .item-container-block {
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
+
+.item-block:nth-child(even) .item-grid .item-container-block {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 1 / 2;
+}
+
+/* image-block */
+.item-block:nth-child(odd) .item-grid .image-block,
+.item-block:nth-child(even) .item-grid .image-block {
+  position: relative;
+}

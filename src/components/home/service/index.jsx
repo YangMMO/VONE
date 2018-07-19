@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
+import './index.css';
 
 export default class Service extends Component {
   render() {
     return(
-      <div className="page-center">
+      <div className="page-center service-gird">
         {
           this.props.data.map((data, i) => {
-            console.log(data)
             return (
-              <div>
-                {data.title}
-                {/* todo */}
-              </div>
+              <article key={i}>
+                <a href={ data.pathname }>
+                  <img src={require(`../../../images/${data.image}`)} alt=""/>
+                  <h1>{ data.title }</h1>
+                  <p>{ data.content }</p>
+                  <span>
+                    { data.activeText }
+                    <i className="iconfont icon-jiantou"></i>  
+                  </span>
+                </a>
+              </article>
             )
           })
         }

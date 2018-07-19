@@ -1,0 +1,45 @@
+.service-gird {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.service-gird article {
+  margin: 8rem 3rem;
+  width: calc(100% - 6rem);
+}
+
+.service-gird a {
+  color: #666;
+}
+
+.service-gird img{
+  display: block;
+  margin: 0 auto;
+  width: 71%;
+}
+
+.service-gird h1 {
+  margin: 4rem 0;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.service-gird p,
+.service-gird span,
+.service-gird span i {
+  font-size: 1.8rem;
+}
+
+.service-gird p {
+  margin-bottom: 4rem;
+  line-height: 3.2rem;
+  text-align: justify;
+}
+
+.service-gird span {
+  color: #ff9000;
+}
+
+.service-gird span i {
+  margin-left: 1rem;
+}

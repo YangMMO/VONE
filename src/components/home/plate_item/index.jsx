@@ -52,36 +52,38 @@ class PlateItem extends Component {
     let state = this.state;
 
     return(
-      <div style={{backgroundColor: `${data.color}`}}>
-        <div className="page-center item-grid">
-          <div 
-            className="item-image-block"
-            ref={this.imageBlock = React.createRef()}>
+      <a href="/product" className="item-link">
+        <div style={{backgroundColor: `${data.color}`}}>
+          <div className="page-center item-grid">
             <div 
-              style={{
-                width: itemIndex % 2 ? state.rigthImageWidth : state.leftImageWidth,
-                left: itemIndex % 2 ? 0 : -state.imageLeft
-              }}
-              className="image-block">
-              <img src={require(`../../../images/banner/${data.image}`)}/>
+              className="item-image-block"
+              ref={this.imageBlock = React.createRef()}>
+              <div 
+                style={{
+                  width: itemIndex % 2 ? state.rigthImageWidth : state.leftImageWidth,
+                  left: itemIndex % 2 ? 0 : -state.imageLeft
+                }}
+                className="image-block">
+                <img src={require(`../../../images/banner/${data.image}`)}/>
+              </div>
+            </div>
+            
+            <div 
+              className="item-container-block"
+              ref={this.containerBlock = React.createRef()}>
+                <div className="container-block">
+                  { data.header.icon ? <i className={`container-icon ${data.header.icon}`}></i> : '' }
+                  { data.header.title ? <h1>{data.header.title}</h1> : '' }
+                  <article>
+                    <h2>{data.title}</h2>
+                    <p>{data.content}</p>
+                    <span>了解详情<i className="iconfont icon-jiantou"></i></span>
+                  </article>
+                </div>
             </div>
           </div>
-          
-          <div 
-            className="item-container-block"
-            ref={this.containerBlock = React.createRef()}>
-              <div className="container-block">
-                { data.header.icon ? <i className={`container-icon ${data.header.icon}`}></i> : '' }
-                { data.header.title ? <h1>{data.header.title}</h1> : '' }
-                <article>
-                  <h2>{data.title}</h2>
-                  <p>{data.content}</p>
-                  <span>了解详情<i className="iconfont icon-jiantou"></i></span>
-                </article>
-              </div>
-          </div>
         </div>
-      </div>
+      </a>
     )
   }
 }

@@ -1,0 +1,115 @@
+.advisory-block {
+  padding: 10rem 0 2rem 0;
+}
+
+.advisory-block h1 {
+  margin-bottom: 80px;
+  font-size: 5.2rem;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.advisory-block .advisoty-container ul {
+  /* padding: 0 40px; */
+  width: calc(100% / 2 - 160px);
+}
+
+.advisory-block .advisoty-container ul:first-child,
+.follow {
+  padding-left: 120px;
+  float: left;
+}
+
+.advisory-block .advisoty-container ul:last-child {
+  padding-right: 120px;
+  float: right;
+}
+
+.advisory-block  .advisoty-container li {
+  margin-bottom: 40px;
+}
+
+.advisory-block h5 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #555;
+  cursor: default;
+}
+
+.advisory-block input,
+.advisory-block textarea {
+  width: 100%;
+  font-size: 1.8rem;
+  border: 0;
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.advisory-block input {
+  padding: 0 1rem;
+  height: 70px;
+}
+
+.advisory-block textarea {
+  height: calc(70px * 2 + 40px + 1.8rem + 20px);
+  padding: 1rem;
+  resize: none;
+}
+
+/* follow */
+.follow {
+  width: calc(100% - 240px);
+  line-height: 70px;
+}
+
+.follow h5 {
+  float: left;
+  margin-right: 60px;
+}
+
+.follow ul,
+.follow li {
+  float: left;
+}
+
+.follow a {
+  color: #777;
+}
+
+.follow i,
+.follow span {
+  font-size: 1.8rem;
+}
+
+.follow i {
+  margin-right: 20px;
+}
+
+.follow span {
+  margin-right: 50px;
+  color: #999;
+}
+
+.follow span:hover {
+  background: #ededed;
+  color: #666;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.follow button {
+  float: right;
+  height: 70px;
+  width: 250px;
+  border: 0;
+  border-radius: 2px;
+  background-color: #005bab;
+  color: #fff;
+  cursor: pointer;
+}
+
+.follow button:hover {
+  background-color: #004d91;
+  outline: none;
+}

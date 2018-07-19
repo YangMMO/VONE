@@ -30,17 +30,20 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 }
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
 	width: 16px;
 	background-color: rgba(241, 241, 241, 1);
 }
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb  {
 	width: 14px;
 	border: 2px solid #ededed;
 	border-radius: 10px;
 	background: rgba(185, 185, 185, 1);
 }
-body::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover,
+textarea::-webkit-scrollbar-thumb:hover {
 	background: rgba(165, 165, 165, 1);
 }
 body::-webkit-scrollbar-button {
