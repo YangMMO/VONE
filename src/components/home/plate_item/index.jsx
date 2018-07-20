@@ -51,6 +51,8 @@ class PlateItem extends Component {
     let itemIndex = this.props.index;
     let state = this.state;
 
+    let img = require(`../../../images/banner/${data.image}`);
+
     return(
       <a href="/product" className="item-link">
         <div style={{backgroundColor: `${data.color}`}}>
@@ -64,7 +66,7 @@ class PlateItem extends Component {
                   left: itemIndex % 2 ? 0 : -state.imageLeft
                 }}
                 className="image-block">
-                <img src={require(`../../../images/banner/${data.image}`)}/>
+                <img src={require(`../../../images/banner/${data.image}`)} />
               </div>
             </div>
             

@@ -34,12 +34,57 @@ export default class App extends Component {
             <ul className="nav-lists">
               { nav_lists.map((item, i) => {
                 return (
-                  <li key={i}>
+                  <li key={i} className="nav-item-block">
                     <NavLink to={ item.pathname }>{ item.title }</NavLink>
+                    <div className="nav-item-container">
+                      <ul>
+                        { item.lists.map((navItem, i) => {
+                          if(navItem.lists) {
+                            return(
+                              <li key={ i } className="nav-more">
+                                <a href={ navItem.pathname }>
+                                  { navItem.title }
+                                  <i className="nav-more-icon"></i>
+                                </a>
+                                <div className="nav-item-more-container">
+                                  
+                                  <a href={ navItem.pathname }>
+                                    <h1>
+                                      <i className="iconfont icon-jiantou"></i>系统概览
+                                    </h1>
+                                  </a>
+                                  <ul>
+                                    { navItem.lists.map((listItem, i) => {
+                                      return(
+                                        <li key={ i }>
+                                          <a href={ navItem.pathname }>
+                                            <i className={ listItem.icon }></i>
+                                            { listItem.title }
+                                          </a>
+                                        </li>
+                                      )
+                                    })
+                                    }
+                                  </ul>
+                                </div>
+                              </li>
+                            )
+                          }
+
+                          return(
+                            <li key={ i } className="nav-not-more">
+                              <a href={ navItem.pathname }>
+                                { navItem.title }
+                              </a>
+                            </li>
+                          )
+                        })
+                      }</ul>
+                    </div>
                   </li>
-                )
-              }) }
+              )}) }
             </ul>
+
             <ul className="nav-funcs">
               { funcs.map((item, i) => {
                 return (
@@ -78,15 +123,13 @@ export default class App extends Component {
                               <a href={ item.pathname }>{ item.title }</a>
                             </h1>
                             <ul>
-                              {
-                                item.list.map((link, i) => {
-                                  return(
-                                    <li key={ i }>
-                                      <a href={ link.pathname }>{ link.text }</a>
-                                    </li>
-                                  )
-                                })
-                              }
+                              { item.list.map((link, i) => {
+                                return(
+                                  <li key={ i }>
+                                    <a href={ link.pathname }>{ link.text }</a>
+                                  </li>
+                                )
+                              }) }
                             </ul>
                           </li>
                         )

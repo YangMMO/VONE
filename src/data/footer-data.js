@@ -58,7 +58,7 @@ module.exports.FOOTER_LISTS = JSON.stringify([
         text: '兆祥邮轮',
         pathname: '/client'
       }, {
-        text: '案例系统',
+        text: '案例信息',
         pathname: '/client'
       }
     ]
