@@ -3,7 +3,7 @@ import './index.css';
 
 export default class Advisory extends Component {
   render() {
-    let data = this.props.data;
+    const data = this.props.data;
 
     return(
       <div className="page-center advisory-block clearfix">

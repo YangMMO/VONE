@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
 import Scaffold from 'mmo-adam';
 
 import './index.css';
 
-import Product from '../../product/index';
-import history from 'history';
-
-class PlateItem extends Component {
+export default class PlateItem extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -19,10 +15,13 @@ class PlateItem extends Component {
   }
 
   componentDidMount() {
-    let offsetLeft = this.imageBlock.current.offsetLeft;
-    let imageClientWidth = this.imageBlock.current.clientWidth;
-    let containerClientWidth = this.containerBlock.current.clientWidth;
-    let bodyClientWidth = document.body.clientWidth;
+    const img = this.imageBlock.current;
+    const cont = this.containerBlock.current;
+
+    const offsetLeft = img.offsetLeft;
+    const imageClientWidth = img.clientWidth;
+    const containerClientWidth = cont.clientWidth;
+    const bodyClientWidth = document.body.clientWidth;
 
     this.setState({
       leftImageWidth: offsetLeft + imageClientWidth,
@@ -30,31 +29,40 @@ class PlateItem extends Component {
       containerWidth: containerClientWidth - 8,
       imageLeft: offsetLeft
     })
-    
-    window.addEventListener('resize', Scaffold.debounce((event) => {
-      offsetLeft = this.imageBlock.current.offsetLeft;
-      imageClientWidth = this.imageBlock.current.clientWidth;
-      containerClientWidth = this.containerBlock.current.clientWidth;
-      bodyClientWidth = document.body.clientWidth;
 
-      this.setState({
-        leftImageWidth: offsetLeft + imageClientWidth,
-        rigthImageWidth: bodyClientWidth - offsetLeft,
-        ContainerWidth: containerClientWidth,
-        imageLeft: offsetLeft
-      })
+    window.addEventListener('resize', Scaffold.debounce((event) => {
+      this._resizeChange()
     }, 0))
   }
 
-  render() {
-    let data = this.props.data;
-    let itemIndex = this.props.index;
-    let state = this.state;
+  componentWillUnmount() {
+    window.removeEventListener('resize', () => {})
+  }
 
-    let img = require(`../../../images/banner/${data.image}`);
+  _resizeChange() {
+    const img = this.imageBlock.current;
+    const cont = this.containerBlock.current;
+
+    const offsetLeft = img.offsetLeft;
+    const imageClientWidth = img.clientWidth;
+    const containerClientWidth = cont.clientWidth;
+    const bodyClientWidth = document.body.clientWidth;
+
+    this.setState({
+      leftImageWidth: offsetLeft + imageClientWidth,
+      rigthImageWidth: bodyClientWidth - offsetLeft,
+      ContainerWidth: containerClientWidth,
+      imageLeft: offsetLeft
+    })
+  }
+
+  render() {
+    const data = this.props.data;
+    const itemIndex = this.props.index;
+    const state = this.state;
 
     return(
-      <a href="/product" className="item-link">
+      <a href={ data.pathname } className="item-link">
         <div style={{backgroundColor: `${data.color}`}}>
           <div className="page-center item-grid">
             <div 
@@ -89,5 +97,3 @@ class PlateItem extends Component {
     )
   }
 }
-
-export default withRouter(PlateItem);

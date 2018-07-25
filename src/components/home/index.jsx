@@ -11,9 +11,9 @@ import Advisory from './advisory/index';
 
 export default class Home extends Component {
   render() {
-    let home_data = JSON.parse(HOME_DATA);
-    let home_service = JSON.parse(HOME_SERVICE);
-    let home_follow = JSON.parse(FOLLOW);
+    const home_data = JSON.parse(HOME_DATA);
+    const home_service = JSON.parse(HOME_SERVICE);
+    const home_follow = JSON.parse(FOLLOW);
 
     return(
       <div>

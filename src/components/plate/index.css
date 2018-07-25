@@ -1,0 +1,52 @@
+.main-gird {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding: 50px 0 80px 0;
+}
+
+.section-container {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.sort-container {
+  margin-bottom: 80px;
+}
+
+.sort-container:last-child {
+  margin: 0;
+}
+
+.sort-container h1 {
+  margin-bottom: 20px;
+  font-size: 2.6rem;
+}
+
+.sort-container ul {
+  border-top: 1px solid #ededed;
+}
+
+.sort-container ul li {
+  border-bottom: 1px solid #ededed;
+}
+
+.sort-container ul li i {
+  margin: 0 20px;
+  font-size: 2.8rem;
+}
+
+.sort-container ul li a {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 66px;
+  cursor: pointer;
+}
+
+
+/* article */
+.article-block {
+  grid-column-start: 2;
+  grid-column-end: 5;
+}

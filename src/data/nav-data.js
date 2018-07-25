@@ -207,11 +207,11 @@ module.exports.FUNCS = JSON.stringify([
   {
     title: '关注我们', 
     icon: 'iconfont icon-guanzhu',
-    lists: {}
+    isfollow: true
   }, {
     title: '简体中文',
-    icon: 'iconfont icon-guoji',
-    lists: {}
+    icon: 'iconfont iconfont icon-guoji',
+    isfollow: false
   }
 ])
 

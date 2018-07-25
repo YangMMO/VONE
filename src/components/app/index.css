@@ -76,6 +76,7 @@ a {
 .page-center {
 	margin: 0 auto;
 	max-width: 85%;
+	/* min-width: 1336px; */
 	/* width: 100%; */
 }
 
