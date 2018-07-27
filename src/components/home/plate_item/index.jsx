@@ -14,6 +14,7 @@ export default class PlateItem extends Component {
     }
   }
 
+  // 初始化
   componentDidMount() {
     const img = this.imageBlock.current;
     const cont = this.containerBlock.current;
@@ -39,9 +40,17 @@ export default class PlateItem extends Component {
     window.removeEventListener('resize', () => {})
   }
 
+  /**
+   * _resizeChange 图片位置大小函数，并设置state
+   * @memberof PlateHeader
+   */
   _resizeChange() {
     const img = this.imageBlock.current;
     const cont = this.containerBlock.current;
+
+    if(!img & !cont) {
+      return;
+    }
 
     const offsetLeft = img.offsetLeft;
     const imageClientWidth = img.clientWidth;

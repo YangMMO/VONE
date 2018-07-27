@@ -6,6 +6,7 @@ export default class Advisory extends Component {
     const data = this.props.data;
 
     return(
+      // 咨询组件
       <div className="page-center advisory-block clearfix">
         <h1>体验咨询</h1>
         <div className="advisoty-container">

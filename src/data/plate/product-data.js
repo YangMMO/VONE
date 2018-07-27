@@ -38,33 +38,5 @@ module.exports.SORTS = JSON.stringify([
       mark: 'VHOS',
       type: 'article'
     }]
-  }, {
-    sortTitle: 'title',
-    lists: [{
-      title: '邮轮信息化管理系统(VCOS)',
-      icon: 'iconfont icon-youlun-A',
-      mark: 'VCOSb',
-      type: 'article'
-    }, {
-      title: '轮渡经营管理系统(VFOS)',
-      icon: 'iconfont icon-lundu-A',
-      mark: 'VFOSb',
-      type: 'article'
-    }, {
-      title: '邮轮教学仿真产品',
-      icon: 'iconfont icon-xuniVR-A',
-      mark: 'YLJXFZb',
-      type: 'article'
-    }, {
-      title: '邮轮通',
-      icon: 'iconfont icon-youlunAPP-A',
-      mark: 'YLTb',
-      type: 'article'
-    }, {
-      title: '酒店经营管理系统(VHOS)',
-      icon: 'iconfont icon-jiudian-A',
-      mark: 'VHOSb',
-      type: 'article'
-    }]
   }
 ])

@@ -23,21 +23,27 @@ export default class App extends Component {
     return(
       <BrowserRouter>
         <div>
+          {/* {nav 导航列表} */}
           <nav className="nav-block page-center">
+            {/* {logo} */}
             <NavLink to="/">
               <div className="nav-logo">
                 <img src={require('../../images/LOGO.png')} alt="index"/>
               </div>
             </NavLink>
+            {/* 一级菜单 */}
             <ul className="nav-lists">
               { nav_lists.map((item, i) => {
                 return (
                   <li key={i} className="nav-item-block">
                     <NavLink to={ item.pathname }>{ item.title }</NavLink>
                     <div className="nav-item-container">
+                      {/* 二级菜单 */}
                       <ul>
                         { item.lists.map((navItem, i) => {
+                          // 三级菜单判断
                           if(navItem.lists) {
+                            // 三级菜单有列表
                             return(
                               <li key={ i } className="nav-more">
                                 <a href={ navItem.pathname }>
@@ -50,6 +56,7 @@ export default class App extends Component {
                                       <i className="iconfont icon-jiantou"></i>系统概览
                                     </h1>
                                   </a>
+                                  {/* 三级菜单 */}
                                   <ul>
                                     { navItem.lists.map((listItem, i) => {
                                       return(
@@ -68,6 +75,7 @@ export default class App extends Component {
                             )
                           }
 
+                          // 三级菜单无列表
                           return(
                             <li key={ i } className="nav-not-more">
                               <a href={ navItem.pathname }>
@@ -82,6 +90,7 @@ export default class App extends Component {
               )}) }
             </ul>
 
+            {/* 功能菜单 */}
             <ul className="nav-funcs">
               { funcs.map((item, i) => {
                 if (item.isfollow) {
@@ -117,7 +126,7 @@ export default class App extends Component {
               }) }
             </ul>
           </nav> 
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home}/>
           <Route path="/product" component={Plate}/>
           <Route path="/program" component={Plate} />
           <Route path="/news" component={Plate} />

@@ -4,6 +4,7 @@ import './index.css';
 export default class Service extends Component {
   render() {
     return(
+      // 服务栏目组件
       <div className="page-center service-gird">
         {
           this.props.data.map((data, i) => {

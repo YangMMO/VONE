@@ -43,10 +43,3 @@
   line-height: 66px;
   cursor: pointer;
 }
-
-
-/* article */
-.article-block {
-  grid-column-start: 2;
-  grid-column-end: 5;
-}

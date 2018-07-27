@@ -12,11 +12,21 @@ a {
 }
 
 /* item-image */
+.image-block {
+  /* transition: all .2s linear; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .image-block img {
   display: flex;
   width: 100%;
+  height: 100%;
   overflow: hidden;
+  
 }
+
 
 /* item-container */
 .item-container-block {

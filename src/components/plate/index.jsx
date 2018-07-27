@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link, HashRouter } from "react-router-dom";
 
 import './index.css';
 
 import PlateHeader from './plate_header/index';
 import Article from './article/index';
+import ArticleList from './article_list/index';
 
 
 export default class Plate extends Component {
@@ -23,42 +23,80 @@ export default class Plate extends Component {
     })
   }
 
+  /**
+   * handeleChangeCase 选中类目设置mark
+   * @param {String} mark
+   * @memberof Plate
+   */
   handleChangeCase(mark) {
     if(mark) {
       this.setState({
         mark: mark
       })
-
     }
   }
 
+  /**
+   * handleSwitchCase 读取选中类目数据类型返回相应类型模块
+   * @param {String} mark
+   * @returns Component: Article ArticleList
+   * @memberof Plate
+   */
   handleSwitchCase(mark) {
-    if(!mark) {
-      return
-    }
-
+    const pathname = window.location.pathname;
     const sorts = JSON.parse(this.state.data.SORTS);
+    let index = '';
+    let curIndex = '';
 
     sorts.forEach(sort => {
+      index = sort.lists[0]
       sort.lists.forEach(item => {
           if(item.mark === mark) {
-            switch(item.type) {
-              case 'article':
-                console.log('article')
-
-                break;
-              case 'lists':
-                console.log('lists')
-
-                break;
-            }
+            curIndex = item;
         }
       })
     })
 
+    if(!this.state.mark) {
+      switch(index.type) {
+        case 'article':
+          const data = this.handlePullArticle(pathname, index)
+          return <Article data={ data } />;
+        case 'lists':
+          return <ArticleList />;
+      }
+      return
+    }
 
+
+    switch(curIndex.type) {
+      case 'article':
+        const data = this.handlePullArticle(pathname, curIndex)
+        return <Article data={ data } />;
+      case 'lists':
+        return <ArticleList />;
+    }
   }
 
+  /**
+   * handlePullArticle 拉取文章数据
+   * @param {String} pathname
+   * @param {Object} cur
+   * @returns {Object}
+   * @memberof Plate
+   */
+  handlePullArticle(pathname, cur) {
+    const ARTICLE = require(`../../data/article${pathname}-data.js`).ARTICLE;
+    const article = JSON.parse(ARTICLE)
+    let data =  {};
+
+    article.forEach(item => {
+      if(item.mark === cur.mark) {
+        data = item
+      }
+    })
+    return data
+  }
 
   render() {
     const state = this.state;
@@ -80,12 +118,10 @@ export default class Plate extends Component {
                       { data.lists.map((item, i) => {
                         return(
                           <li key={ i }>
-                            {/* <Link to={ item.path }> */}
                             <a onClick={this.handleChangeCase.bind(this, item.mark)}>
                               <i className={ item.icon }></i>
                               { item.title }
                             </a>
-                            {/* </Link> */}
                           </li>
                         )
                       }) }
@@ -94,9 +130,9 @@ export default class Plate extends Component {
                 )
               })}
             </section>
-            <div className="article-block">
-              { this.handleSwitchCase(state.mark) }
-            </div>
+
+            { this.handleSwitchCase(state.mark) }
+
           </main>
         </div>
 

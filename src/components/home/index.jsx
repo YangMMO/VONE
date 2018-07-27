@@ -17,12 +17,14 @@ export default class Home extends Component {
 
     return(
       <div>
+        {/* 自定义首页栏目顺序及组件添加 */}
         { home_data.map((data, i) => {
           switch(i) {
             case 0: 
               return (
                 <div key={ i } className="item-block">
                   <PlateItem data={ data } index={ i }/>
+                  {/* 新组件栏目 */}
                   <Service data={ home_service } />
                 </div>
               )
@@ -34,6 +36,7 @@ export default class Home extends Component {
               )
           }
         }) }
+        {/* 咨询组件 */}
         <Advisory data={home_follow}/>
       </div>
     )

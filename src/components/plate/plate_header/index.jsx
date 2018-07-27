@@ -11,6 +11,7 @@ export default class PlateHeader extends Component {
     }
   }
 
+  // 初始化
   componentDidMount() {
     const offsetLeft = this.imageBlock.current.offsetLeft;
     const bodyClientWidth = document.body.clientWidth;
@@ -28,15 +29,25 @@ export default class PlateHeader extends Component {
     window.removeEventListener('resize', () => {})
   }
 
-  
-  _resizeChange() {
-    const offsetLeft = this.imageBlock.current.offsetLeft;
-    const bodyClientWidth = document.body.clientWidth;
+  /**
+   * _resizeChange 图片位置大小函数，并设置state
+   * @memberof PlateHeader
+   */
+  // _resizeChange() {
+  //   const img = this.imageBlock;
+  //   const bodyClientWidth = document.body.clientWidth;
+  //   let offsetLeft;
 
-    this.setState({
-      rigthImageWidth: bodyClientWidth - offsetLeft,
-    })
-  }
+  //   if(!img) {
+  //     return
+  //   }
+
+  //   offsetLeft = img.img.offsetLeft.current;
+
+  //   this.setState({
+  //     rigthImageWidth: bodyClientWidth - offsetLeft,
+  //   })
+  // }
   
 
   render() {
@@ -63,7 +74,7 @@ export default class PlateHeader extends Component {
             <div 
               style={{
                 right: 0,
-                width: state.rigthImageWidth,
+                width: state.rigthImageWidth
               }}
               className="image-block">
               <img src={require(`../../../images/plate/${data.image}`)} />

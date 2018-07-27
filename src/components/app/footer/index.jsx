@@ -7,12 +7,14 @@ export default class Footer extends Component {
     
     return(
       <footer className="footer-block">
+        {/* 返回顶部 */}
         <div className="back-to-top">
           <div className="page-center">
             <i></i>
             <h5>返回顶部</h5>
           </div>
         </div>
+        {/* 页脚栏目 */}
         <div className="footer-container">
           <div className="page-center">
             <h5>珠海市泛网科技有限公司</h5>
@@ -40,6 +42,7 @@ export default class Footer extends Component {
             </ul>
           </div>
         </div>
+        {/* copyright */}
         <div className="copyright">
           <div className="page-center">
             <a>Copyright © 2014 - 2018 珠海市泛网科技有限公司 VONE 版权所有.</a>
