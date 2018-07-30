@@ -1,6 +1,6 @@
 module.exports.HEADER = JSON.stringify({
   title: '新闻资讯',
-  content: '泛网邮轮资讯，提供及时的邮轮新闻资讯，邮轮政策，企业新闻，让您及时的了解最新的邮轮动态与企业动态',
+  content: '提供及时的邮轮新闻资讯，邮轮政策，企业新闻，让您及时的了解最新的邮轮动态与企业动态',
   image: 'news.png',
   color: '#21b1b7',
   header: {

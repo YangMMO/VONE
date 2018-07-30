@@ -1,0 +1,17 @@
+.news-item-block {
+  padding-bottom: 60px;
+}
+
+.news-item-block:first-child {
+  padding-top: 60px;
+}
+
+.news-item-block a {
+  display: flex;
+  color: #999;
+}
+
+.news-msg-container h1 {
+  font-size: 2.6rem;
+  color: #555;
+}

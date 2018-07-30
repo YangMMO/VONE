@@ -33,21 +33,21 @@ export default class PlateHeader extends Component {
    * _resizeChange 图片位置大小函数，并设置state
    * @memberof PlateHeader
    */
-  // _resizeChange() {
-  //   const img = this.imageBlock;
-  //   const bodyClientWidth = document.body.clientWidth;
-  //   let offsetLeft;
+  _resizeChange() {
+    const img = this.imageBlock.current;
+    const bodyClientWidth = document.body.clientWidth;
+    let offsetLeft;
 
-  //   if(!img) {
-  //     return
-  //   }
+    if(!img) {
+      return
+    }
 
-  //   offsetLeft = img.img.offsetLeft.current;
+    offsetLeft = img.offsetLeft;
 
-  //   this.setState({
-  //     rigthImageWidth: bodyClientWidth - offsetLeft,
-  //   })
-  // }
+    this.setState({
+      rigthImageWidth: bodyClientWidth - offsetLeft,
+    })
+  }
   
 
   render() {

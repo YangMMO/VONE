@@ -1,8 +1,9 @@
 module.exports.HEADER = JSON.stringify({
   title: '人力资源',
-  content: 'content',
-  image: 'product.png',
-  color: '#000',
+  content: '院校精英储备人才，提供多方位就业实习机会',
+  image: 'jobs.png',
+  color: '#f58925',
+  // color: '#e79109',
   header: {
     title: '',
     icon: ''
@@ -13,6 +14,11 @@ module.exports.SORTS = JSON.stringify([
   {
     sortTitle: '',
     lists: [{
+      title: '认识泛网',
+      icon: 'iconfont icon-hezuo-A',
+      mark: 'RSFW',
+      type: 'article'
+    }, {
       title: '社会招聘',
       icon: 'iconfont icon-hezuo-A',
       mark: 'SHZP',

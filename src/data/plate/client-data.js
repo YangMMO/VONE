@@ -2,7 +2,8 @@ module.exports.HEADER = JSON.stringify({
   title: '客户服务',
   content: '泛网科技与各行业企业达成战略共识，同时为各大行业企业中国独家代理商，为企业提供更优质的客户服务',
   image: 'client.png',
-  color: '#595d62',
+  // color: '#595d62',
+  color: '#385364',
   header: {
     title: '',
     icon: ''

@@ -1,8 +1,8 @@
 module.exports.HEADER = JSON.stringify({
   title: '关于我们',
-  content: 'content',
+  content: '引领中国邮轮产业健康发展，助力中国邮轮扬帆世界',
   image: 'product.png',
-  color: '#000',
+  color: '#00327d',
   header: {
     title: '',
     icon: ''

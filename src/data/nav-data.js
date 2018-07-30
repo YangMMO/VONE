@@ -159,6 +159,9 @@ module.exports.NAV_LISTS = JSON.stringify([
     title: '人力资源',
     pathname: '/jobs',
     lists: [{
+      title: '认识泛网',
+      pathname: '/jobs'
+    },{
       title: '社会招聘',
       pathname: '/jobs'
     }, {
@@ -166,6 +169,9 @@ module.exports.NAV_LISTS = JSON.stringify([
       pathname: '/jobs'
     }, {
       title: '实习机会',
+      pathname: '/jobs'
+    }, {
+      title: '投递简历',
       pathname: '/jobs'
     }]
   }, {

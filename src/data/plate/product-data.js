@@ -1,6 +1,6 @@
 module.exports.HEADER = JSON.stringify({
   title: '产品中心',
-  content: '庞大的经营数据，行业知识，经验基础，成熟的开发团队，通过结合先进的技术和不断创新，为邮轮管理公司定制开发一系列邮轮应用软件',
+  content: '庞大的经营数据，行业知识，经验基础，成熟的开发团队，先进技术与创新，为邮轮管理公司定制开发一系列邮轮应用软件',
   image: 'product.png',
   color: '#00327d',
   header: {

@@ -58,23 +58,23 @@ export default class Plate extends Component {
     })
 
     if(!this.state.mark) {
+      const data = this.handlePullArticle(index.type, pathname, index);
       switch(index.type) {
         case 'article':
-          const data = this.handlePullArticle(pathname, index)
           return <Article data={ data } />;
         case 'lists':
-          return <ArticleList />;
+          return <ArticleList data={ data } />;
       }
       return
     }
 
-
+    const data = this.handlePullArticle(curIndex.type, pathname, curIndex);
+    
     switch(curIndex.type) {
       case 'article':
-        const data = this.handlePullArticle(pathname, curIndex)
         return <Article data={ data } />;
       case 'lists':
-        return <ArticleList />;
+        return <ArticleList data={ data } />;
     }
   }
 
@@ -85,17 +85,29 @@ export default class Plate extends Component {
    * @returns {Object}
    * @memberof Plate
    */
-  handlePullArticle(pathname, cur) {
-    const ARTICLE = require(`../../data/article${pathname}-data.js`).ARTICLE;
-    const article = JSON.parse(ARTICLE)
-    let data =  {};
+  handlePullArticle(type, pathname, cur) {
+    let ret =  {};
+    let data;
 
-    article.forEach(item => {
+    switch(type) {
+      case 'article':
+        const ARTICLE = require(`../../data/article${pathname}-data.js`).ARTICLE;
+        const article = JSON.parse(ARTICLE);
+        data = article;
+        break;
+      case 'lists':
+        const ARTICLELIST = require(`../../data/article${pathname}-data.js`).ARTICLELIST;
+        const articleList = JSON.parse(ARTICLELIST);
+        data = articleList
+        break;
+    }
+
+    data.forEach(item => {
       if(item.mark === cur.mark) {
-        data = item
+        ret = item
       }
     })
-    return data
+    return ret
   }
 
   render() {

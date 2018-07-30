@@ -1,6 +1,6 @@
 module.exports.HEADER = JSON.stringify({
   title: '解决方案',
-  content: '泛网提供邮轮信息化整套方案，包含IT基础工程、IT基础系统、业务系统、IT运维服务；简化客户IT管理，在整体优化上给客户带来更好的体验。',
+  content: 'IT基础工程、IT基础系统、业务系统、IT运维服务；简化客户IT管理，在整体优化上给客户带来更好的体验。',
   image: 'program.png',
   color: '#4a4a4a',
   header: {

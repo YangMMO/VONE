@@ -73,6 +73,24 @@ a {
 	color: #333;
 }
 
+::selection {
+	background: #016fe0;
+	color: #fff;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #999;
+}
+
 .page-center {
 	margin: 0 auto;
 	/* max-width: 1500px; */
