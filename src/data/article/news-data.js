@@ -2,36 +2,37 @@ module.exports.ARTICLELIST = JSON.stringify([
   {
     mark: 'GSDT',
     template: 1,
+    title: '公司动态',
     lists: [{
       id: 18,
       title: '泛网受邀参加“第三届邮轮管理课程研修班”',
       description: '2018年7月21日上午，泛网受邀参加上海海事大学亚洲邮轮学院“第三届邮轮管理课程研修班”。来自全国各地，邮轮产业各领域的70余名学员进行为期一周的课程研修。',
-      image: '123'
+      image: '322850ec658192f383c0f3faa9995b74.jpg'
     }, {
       id: 17,
       title: '毕升集团与CR Software签订代理协议，将赛马游戏带入中国市场',
       description: '2018年7月3日，全球领先赛马游戏服务商CR Software 代表人到访毕升集团泛网科技有限公司，双方经过几个月的合作讨论，毕升集团与CR Software签署全球销售与中国区域独家代理协议，负责CR Software赛马游戏中国市场及邮轮市场的销售、市场推广、本土化二次开发、技术支持及售后服务。毕升集团计划将赛马游戏引入邮轮，给邮轮游客带来更多娱乐选择，增加邮轮公共游戏区域活跃度，为船东带来更广阔的收益。',
-      image: ''
+      image: '8baefaa43c3486782f04df415b61c194.jpg'
     }, {
       id: 16,
       title: '泛网科技与全球领先邮轮信息服务商 Resco签署中国独家代理协议',
       description: '5月21日，泛网科技总经理范道接待再次来访的Rescompany公司总经理Peter Winqvist一行，Resco与泛网经过几个月的沟通，于5月22号签署Resco中国独家代理协议。此次签约给中国区域运营的国内国际邮轮提供了更加完善的产品，通过与Resco的战略合作，泛网为使用Resco产品的国内外邮轮提供产品本土化中文应用与本土化快速、专业的服务。',
-      image: ''
+      image: '6ee2e4bbf78c5e91e862241963781ad7.png'
     }, {
       id: 15,
       title: '泛网科技应邀加入“广州邮轮产业联盟” 参加《2018广州邮轮发展圆桌会议》',
       description: '5月17日上午，由广州市商委会，南沙区政府和中国交通运输协会邮轮游艇分会主办的2018广州邮轮发展圆桌会在广州举行，泛网科技以“广州邮轮产业联盟成员”单位应邀出席此次会议。',
-      image: ''
+      image: '5721cf8ffd7d10de99f35ec841c4c494.jpg'
     }, {
       id: 14,
       title: '万有－泛网 战略合作框架协议签约',
       description: '5月4日上午，海事大学肖宝家副校长、程爵浩教授、万有（上海）船舶装修科技中心有限公司李员根总经理、孙永胜总监及杨文涛、陈海波等领导一行来我司指导，交流。',
-      image: ''
+      image: 'f1b170c478a2dd7ee7bb1bf324b12f5a.png'
     }, {
       id: 13,
       title: '招商蛇口领导一行来我司视察交流',
       description: '2018年5月3日下午4点，招商局蛇口工业区控股股份有限公司（以下简称“招商蛇口）龚镭副总经理、辛总等领导一行到我司考察与交流。公司范道总经理、销售部黄经理等陪同参观并作汇报。',
-      image: ''
+      image: '49b1b161008599ea688ea47268ace624.png'
     }, {
       id: 12,
       title: '泛网科技强强联手上海兆祥邮轮科技集团——聘请庄兆祥先生为公司邮轮事业发展战略顾问',
@@ -95,37 +96,8 @@ module.exports.ARTICLELIST = JSON.stringify([
     }]
   }, {
     mark: 'HYDT',
-    template: 2,
-    lists: [{
-      id: 3,
-      title: '内容待完善...',
-      description: '完善中...',
-      image: '123'
-    }, {
-      id: 2,
-      title: '内容待完善...',
-      description: '完善中...',
-      image: ''
-    }, {
-      id: 1,
-      title: '内容待完善...',
-      description: '完善中...',
-      image: ''
-    }, {
-      id: 3,
-      title: '内容待完善...',
-      description: '完善中...',
-      image: '123'
-    }, {
-      id: 2,
-      title: '内容待完善...',
-      description: '完善中...',
-      image: ''
-    }, {
-      id: 1,
-      title: '内容待完善...',
-      description: '完善中...',
-      image: ''
-    }]
+    template: 1,
+    title: '行业动态',
+    lists: []
   }
 ])

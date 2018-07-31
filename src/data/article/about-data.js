@@ -10,6 +10,6 @@ module.exports.ARTICLE = JSON.stringify([
   }, {
     mark: 'LXWM',
     title: '联系我们',
-    content: '待完善...'
+    content: '<p><br></p><p><span style="font-size:14px;">珠海泛网科技有限公司</span> </p><p><span style="font-size:14px;">Zhuhai Vone Technology Co.,LTD.&nbsp;</span> </p><p><br></p><p><span style="font-size:14px;">珠海地址:珠海市香洲区翠前北路森宇国际大厦2201室&nbsp;&nbsp;&nbsp;&nbsp;邮编：519060&nbsp;</span> </p><p><span style="font-size:14px;">电话：0756-8983833/8986833</span> </p><p><span style="font-size:14px;">E-mail:&nbsp;sales@vonechina.com&nbsp;</span> </p><p><span style="font-size:14px;color:#003399;">http://</span><a href="http://www.vonechina.com/"><span style="font-size:14px;color:#003399;">www.vonechina.com</span></a> </p><p><br></p><p><span style="font-size:14px;">香港地址：弥敦道恒生旺角大厦1103室</span> </p><p><span style="font-size:14px;">电话：852-60471353</span> </p><p><br></p><p><span style="font-size:14px;">珠海地址乘车路线：&nbsp;</span> </p><p><span style="font-size:14px;">往拱北方向乘坐8路、15路、20路、68路、992路至健华医院巴士站下车，需往回走二十几米经过十字路口经斑马线过马路对面直走10米右拐沿着路进去(往香洲方向到健华医院巴士站下车，往前走十几米右拐，直走10米右拐沿着路进去），见到一栋25层高的黑白灰三色商务大楼即可。</span> </p><p><span style="font-size:14px;"><br></span> </p><p><br></p><div id="allmap"></div>'
   }
 ])

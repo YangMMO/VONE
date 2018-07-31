@@ -7,18 +7,28 @@ export default class Template1 extends Component {
     const data = this.props.data;
 
     return(
-      <main>
+      // 列表模板1
+      <main className="show-lists-block">
+        { data.length === 0 ? <h5>内容完善中...</h5> : ''}
         <ul>
           { data.map((item, i) => {
             return(
-              <li key={i} className="news-item-block">
+              <li key={i} className="template1-item-block">
                 <a href="">
-                  <div className="news-img-container">
-                    <img src="" alt=""/>
-                  </div>
-                  <div className="news-msg-container">
+                  <div className="template1-item-container">
                     <h1>{ item.title }</h1>
-                    <span>{ item.description }</span>
+                    <div className="template1-item-description clearfix">
+                      <div 
+                        className={item.image ? '' : 'template1-item-not-show'}
+                        style={{ 
+                          backgroundImage: item.image ? `url(${require(`../../../images/article/${item.image}`)})` : ''
+                        }}></div>
+                      <span>{ item.description }</span>
+                      <div className="template1-item-detail">
+                        <i>详细内容</i>
+                        <i className="iconfont icon-jiantou"></i>
+                      </div>
+                    </div>
                   </div>
                 </a>
               </li>

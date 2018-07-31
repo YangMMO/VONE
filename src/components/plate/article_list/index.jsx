@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './index.css';
 
 import Template1 from '../template/template1';
-// import Template2 from '../template/template2';
+import Template2 from '../template/template2';
 
 export default class ArticleList extends Component {
   constructor(props) {
@@ -64,19 +64,20 @@ export default class ArticleList extends Component {
   }
 
   handleSwitchCase(template) {
-    const dataList = this.props.data.lists;
+    const data = this.props.data;
+    const dataList = data.lists;
     const state = this.state
     const show = state.showNum * state.curPage;
     const offset = show - state.showNum;
     let showData;
 
-    showData = dataList.slice(offset, show)
-
     switch(template) {
       case 1:
+        showData = dataList.slice(offset, show)
         return <Template1 data={ showData }/>
       case 2:
-        return <div>456</div>
+        showData = dataList.slice(offset, 8)
+        return <Template2 data={ showData } typeName={ data.title }/>
     }
   }
 
@@ -87,20 +88,24 @@ export default class ArticleList extends Component {
 
     return(
       // 文章列表组件
-      <div className="article-list-block">
+      <div className="article-list-block" id="page-block">
         {/* // 页数 */}
         <div className="article-list-page-block clearfix">
-          <button onClick={ this.handleonClickPagePrev.bind(this) }>
-            <i className="iconfont icon-jiantou1"></i>
-          </button>
+          <a href="#page-block">
+            <button onClick={ this.handleonClickPagePrev.bind(this) }>
+              <i className="iconfont icon-jiantou1"></i>
+            </button>
+          </a>
           <input 
             type="text" 
             onChange={this.handleonChangePage.bind(this)} 
             value={state.pageVal}
             placeholder={ state.page ? `${state.curPage}/${state.page}` : '0/0' }/>
-          <button onClick={ this.handleonClickPageNext.bind(this) }>
-            <i className="iconfont icon-jiantou1"></i>
-          </button>
+          <a href="#page-block">
+            <button onClick={ this.handleonClickPageNext.bind(this) }>
+              <i className="iconfont icon-jiantou1"></i>
+            </button>
+          </a>
         </div>
 
         {/* 内容列表 */}
@@ -109,17 +114,21 @@ export default class ArticleList extends Component {
 
         {/* // 页数 */}
         <div className="article-list-page-block clearfix">
-          <button onClick={ this.handleonClickPagePrev.bind(this) }>
-            <i className="iconfont icon-jiantou1"></i>
-          </button>
+          <a href="#page-block">
+            <button onClick={ this.handleonClickPagePrev.bind(this) }>
+              <i className="iconfont icon-jiantou1"></i>
+            </button>
+          </a>
           <input 
             type="text" 
             onChange={this.handleonChangePage.bind(this)} 
             value={state.pageVal}
             placeholder={ state.page ? `${state.curPage}/${state.page}` : '0/0' }/>
-          <button onClick={ this.handleonClickPageNext.bind(this) }>
-            <i className="iconfont icon-jiantou1"></i>
-          </button>
+          <a href="#page-block">
+            <button onClick={ this.handleonClickPageNext.bind(this) } href="">
+              <i className="iconfont icon-jiantou1"></i>
+            </button>
+          </a>
         </div>
       </div>
     )

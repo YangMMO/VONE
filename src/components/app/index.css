@@ -46,6 +46,10 @@ body::-webkit-scrollbar-thumb:hover,
 textarea::-webkit-scrollbar-thumb:hover {
 	background: rgba(165, 165, 165, 1);
 }
+body::-webkit-scrollbar-thumb:active,
+textarea::-webkit-scrollbar-thumb:active {
+	background: rgba(120, 120, 120, 1);
+}
 body::-webkit-scrollbar-button {
 	height: 16px;
 	background-color: rgba(185, 185, 185, 1);

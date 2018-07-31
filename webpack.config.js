@@ -27,7 +27,7 @@ module.exports = {
             test: /\.(woff|svg|eot|ttf)\??.*$/,
             loader: 'url-loader?name=fonts/[name].[md5:hash:hex:7].[ext]'
         }, {
-            test: /\.(png|jpg|gif)$/,
+            test: /\.(png|jpg|gif|jpeg)$/,
             use: [
               {
                 loader: 'file-loader'

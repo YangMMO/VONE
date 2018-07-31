@@ -21,23 +21,23 @@
   border-top: 1px solid #ededed;
 }
 
-.article-list-page-block button,
+.article-list-page-block a button,
 .article-list-page-block input {
   border: 0;
   background-color: #fff;
   box-sizing: border-box;
 }
 
-.article-list-page-block button > i,
+.article-list-page-block a button > i,
 .article-list-page-block input {
   font-size: 1.8rem;
 }
 
-.article-list-page-block button:first-child {
+.article-list-page-block a:first-child button{
   transform: rotate(180deg);
 }
 
-.article-list-page-block button {
+.article-list-page-block a button {
   outline: none;
   width: 36px;
   height: 36px;

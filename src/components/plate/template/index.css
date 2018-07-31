@@ -1,17 +1,114 @@
-.news-item-block {
-  padding-bottom: 60px;
+.show-lists-block {
+  min-height: 400px;
 }
 
-.news-item-block:first-child {
-  padding-top: 60px;
+.show-lists-block h5 {
+  margin-top: 60px;
+  font-size: 1.6rem;
+  color: #999;
 }
 
-.news-item-block a {
+.template1-item-block:first-child {
+  padding-top: calc(60px - .5rem);
+}
+
+/* template1 */
+.template1-item-block {
+  padding-bottom: calc(60px - .5rem);
+}
+
+.template1-item-block a {
   display: flex;
   color: #999;
 }
 
-.news-msg-container h1 {
+.template1-item-container h1 {
   font-size: 2.6rem;
+  line-height: 3.6rem;
   color: #555;
+}
+
+.template1-item-description {
+  padding-top: calc(40px - .5rem);
+}
+
+.template1-item-description div:first-child {
+  float: left;
+  margin-right: 30px;
+  height: 200px;
+  width: 310px;
+  background-size: cover;
+}
+
+.template1-item-not-show {
+  display: none;
+}
+
+.template1-item-description span {
+  padding-top: .4rem;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  text-align: justify;
+  display: -webkit-box;    
+  -webkit-box-orient: vertical;    
+  -webkit-line-clamp: 5;    
+  overflow: hidden; 
+}
+
+.template1-item-detail {
+  margin-top: calc(30px - .6rem);
+}
+
+.template1-item-detail i {
+  vertical-align: middle;
+  font-size: 1.8rem;
+  color: #ff9000;
+}
+
+
+/* template2 */
+.template2-table-block {
+  padding: calc(60px - .5rem) 0;
+}
+
+.template2-table-block,
+.template2-table-block thead, 
+.template2-table-block tbody {
+  width: 100%;
+}
+
+.template2-table-block th:first-child {
+  text-align: left;
+  padding-top: calc(60px - .5rem);
+}
+
+.template2-table-block td:not(:first-child) {
+  text-align: center
+}
+
+.template2-table-block th:first-child,
+.template2-table-block td:first-child {
+  padding-left: 20px;
+}
+
+.template2-table-block th,
+.template2-table-block td {
+  font-size: 1.6rem;
+  color: #555;
+  height: 60px;
+  line-height: 60px;
+}
+
+.template2-table-block tr:nth-child(even) {
+  background-color: #f7f7f7;
+  border-radius: 2px;
+}
+
+.template2-table-block td:first-child {
+  color: #777;
+}
+
+.template2-table-block td a {
+  color: #555;
+  font-weight: bold;
 }
