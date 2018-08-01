@@ -12,19 +12,20 @@ module.exports.HEADER = JSON.stringify({
 module.exports.SORTS = JSON.stringify([
   {
     sortTitle: '',
+    template: 1,
     lists: [{
       title: '关于我们',
-      icon: 'iconfont icon-youlun-A',
+      icon: 'iconfont icon-fanwang-A-copy',
       mark: 'GYWM',
       type: 'article'
     }, {
       title: '留言咨询',
-      icon: 'iconfont icon-youlun-A',
+      icon: 'iconfont icon-liuyan-A',
       mark: 'LYZX',
       type: 'article'
     }, {
       title: '联系我们',
-      icon: 'iconfont icon-lundu-A',
+      icon: 'iconfont icon-lianxi-A',
       mark: 'LXWM',
       type: 'article'
     }]

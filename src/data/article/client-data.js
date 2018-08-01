@@ -2,7 +2,7 @@ module.exports.ARTICLE = JSON.stringify([
   {
     mark: 'KHHZ',
     title: '客户合作',
-    content: '待完善...'
+    content: '客户合作-完善中...'
   }, {
     mark: 'RESCO',
     title: '关于Resco',
@@ -10,11 +10,11 @@ module.exports.ARTICLE = JSON.stringify([
   }, {
     mark: 'CR',
     title: 'CR Sotfware',
-    content: '待完善...'
+    content: 'CR Sotfware-完善中...'
   }, {
     mark: 'ZXYL',
     title: '兆祥邮轮',
-    content: '待完善...'
+    content: '兆祥邮轮-完善中...'
   }
 ])
 

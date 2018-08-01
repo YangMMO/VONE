@@ -101,3 +101,27 @@ module.exports.ARTICLELIST = JSON.stringify([
     lists: []
   }
 ])
+
+module.exports.ARTICLE = JSON.stringify([
+  {
+    mark: 'YLZS',
+    title: '邮轮知识',
+    content: '邮轮知识-内容完善中...'
+  }, {
+    mark: 'YCZS',
+    title: '游船知识',
+    content: '游船知识-内容完善中...'
+  }, {
+    mark: 'LYGL',
+    title: '旅游管理（邮轮方向）',
+    content: '旅游管理（邮轮方向-内容完善中...'
+  }, {
+    mark: 'LDGLLC',
+    title: '轮渡管理流程',
+    content: '轮渡管理流程-内容完善中...'
+  }, {
+    mark: 'YLAQ',
+    title: '邮轮安全',
+    content: '邮轮安全-内容完善中...'
+  } 
+])

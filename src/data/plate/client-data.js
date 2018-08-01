@@ -13,6 +13,7 @@ module.exports.HEADER = JSON.stringify({
 module.exports.SORTS = JSON.stringify([
   {
     sortTitle: '',
+    template: 1,
     lists: [{
       title: '客户合作',
       icon: 'iconfont icon-hezuo-A',

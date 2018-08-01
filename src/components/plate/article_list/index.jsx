@@ -43,9 +43,32 @@ export default class ArticleList extends Component {
   
   handleonChangePage(event) {
     const value = event.target.value;
-    if(!isNaN(value) && value !== ' ') {
-      this.setState({ pageVal: value });
+    if(!isNaN(value) && value !== '' && value !== '0') {
+      this.setState({ pageVal: value !== '0' ? value : '1'});
     }
+  }
+
+  handleonKeyUpPage(event) {
+    const keyCode = event.keyCode;
+
+    if (keyCode === 13 &&
+        this.state.pageVal !== '' &&
+        this.state.pageVal < this.state.page) {
+      this.setState({ 
+        curPage: this.state.pageVal,
+        pageVal: ''
+      })
+    } else if (this.state.pageVal > this.state.page) {
+      this.setState({ pageVal: this.state.page})
+    }
+  }
+
+  handleonBlurPage() {
+    if (this.state.pageVal !== '' &&
+        this.state.pageVal < this.state.page) {
+      this.setState({ curPage: this.state.pageVal})
+    }
+    this.setState({ pageVal: ''})
   }
 
   handleonClickPagePrev() {
@@ -97,8 +120,11 @@ export default class ArticleList extends Component {
             </button>
           </a>
           <input 
-            type="text" 
-            onChange={this.handleonChangePage.bind(this)} 
+            type="text"
+            ref={this.input = React.createRef()}
+            onChange={this.handleonChangePage.bind(this)}
+            onKeyUp={this.handleonKeyUpPage.bind(this)}
+            onBlur={this.handleonBlurPage.bind(this)}
             value={state.pageVal}
             placeholder={ state.page ? `${state.curPage}/${state.page}` : '0/0' }/>
           <a href="#page-block">

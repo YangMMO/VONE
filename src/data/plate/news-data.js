@@ -12,6 +12,7 @@ module.exports.HEADER = JSON.stringify({
 module.exports.SORTS = JSON.stringify([
   {
     sortTitle: '',
+    template: 1,
     lists: [{
       title: '公司动态',
       icon: 'iconfont icon-qiye-A',
@@ -22,6 +23,35 @@ module.exports.SORTS = JSON.stringify([
       icon: 'iconfont icon-dongtai-A',
       mark: 'HYDT',
       type: 'lists'
+    }]
+  }, {
+    sortTitle: '行业知识',
+    template: 2,
+    lists: [{
+      title: '邮轮知识',
+      icon: '',
+      mark: 'YLZS',
+      type: 'article'
+    }, {
+      title: '游船知识',
+      icon: '',
+      mark: 'YCZS',
+      type: 'article'
+    }, {
+      title: '旅游管理（邮轮方向）',
+      icon: 'iconfont icon-qiye-A',
+      mark: 'LYGL',
+      type: 'article'
+    }, {
+      title: '轮渡管理流程',
+      icon: '',
+      mark: 'LDGLLC',
+      type: 'article'
+    }, {
+      title: '邮轮安全',
+      icon: '',
+      mark: 'YLAQ',
+      type: 'article'
     }]
   }
 ])

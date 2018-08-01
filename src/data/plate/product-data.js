@@ -12,6 +12,7 @@ module.exports.HEADER = JSON.stringify({
 module.exports.SORTS = JSON.stringify([
   {
     sortTitle: '',
+    template: 1,
     lists: [{
       title: '邮轮信息化管理系统(VCOS)',
       icon: 'iconfont icon-youlun-A',

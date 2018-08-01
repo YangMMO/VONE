@@ -19,7 +19,8 @@ export default class Plate extends Component {
   componentWillMount() {
     const path = this.props.match.path.substring(1);
     this.setState({ 
-      data: require(`../../data/plate/${path}-data.js`)
+      data: require(`../../data/plate/${path}-data.js`),
+
     })
   }
 
@@ -48,14 +49,19 @@ export default class Plate extends Component {
     let index = '';
     let curIndex = '';
 
+    if (sorts.length > 1) {
+      index = sorts[0].lists[0]
+    }
+
     sorts.forEach(sort => {
-      index = sort.lists[0]
+      sorts.length > 1 ? index = sorts[0].lists[0] : index = sort.lists[0]
       sort.lists.forEach(item => {
           if(item.mark === mark) {
             curIndex = item;
         }
       })
     })
+
 
     if(!this.state.mark) {
       const data = this.handlePullArticle(index.type, pathname, index);
@@ -112,34 +118,54 @@ export default class Plate extends Component {
 
   render() {
     const state = this.state;
-    const data = this.state.data;
+    const data = state.data;
     const headerData = JSON.parse(data.HEADER);
     const sorts = JSON.parse(data.SORTS);
 
     return(
-
+        // 板块页面模板
         <div>
           <PlateHeader data={ headerData }/>
           <main className="page-center main-gird">
             <section className="section-container">
               {sorts.map((data, i) => {
-                return (
-                  <div className="sort-container" key={ i }>
-                    { data.sortTitle ? <h1>{ data.sortTitle }</h1> : ''}
-                    <ul>
-                      { data.lists.map((item, i) => {
-                        return(
-                          <li key={ i }>
-                            <a onClick={this.handleChangeCase.bind(this, item.mark)}>
-                              <i className={ item.icon }></i>
-                              { item.title }
-                            </a>
-                          </li>
-                        )
-                      }) }
-                    </ul>
-                  </div>
-                )
+                switch(data.template) {
+                  case 1:
+                    return (
+                      <div className="sort-container" key={ i } data-template="1">
+                        { data.sortTitle ? <h1>{ data.sortTitle }</h1> : ''}
+                        <ul>
+                          { data.lists.map((item, i) => {
+                            return(
+                              <li key={ i }>
+                                <a onClick={this.handleChangeCase.bind(this, item.mark)}>
+                                  <i className={ item.icon }></i>
+                                  { item.title }
+                                </a>
+                              </li>
+                            )
+                          }) }
+                        </ul>
+                      </div>
+                    )
+                  case 2:
+                    return (
+                      <div className="sort-container" key={ i } data-template="2">
+                      { data.sortTitle ? <h1>{ data.sortTitle }</h1> : ''}
+                      <ul>
+                        { data.lists.map((item, i) => {
+                          return(
+                            <li key={ i }>
+                              <a onClick={this.handleChangeCase.bind(this, item.mark)}>
+                                { item.title }
+                              </a>
+                            </li>
+                          )
+                        }) }
+                      </ul>
+                    </div>
+                    )
+                }
               })}
             </section>
 
