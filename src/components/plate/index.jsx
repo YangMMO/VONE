@@ -19,8 +19,7 @@ export default class Plate extends Component {
   componentWillMount() {
     const path = this.props.match.path.substring(1);
     this.setState({ 
-      data: require(`../../data/plate/${path}-data.js`),
-
+      data: require(`../../data/plate/${path}-data.js`)
     })
   }
 

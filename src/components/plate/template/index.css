@@ -38,6 +38,7 @@
   height: 200px;
   width: 310px;
   background-size: cover;
+  background-position: center;
 }
 
 .template1-item-not-show {

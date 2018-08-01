@@ -3,9 +3,20 @@ import React, { Component } from 'react';
 import './index.css';
 
 export default class Template1 extends Component {
+
+  handleonClickSotrage(item) {
+    const changeArticle = this.props.changeArticle;
+    const article = {
+      mark: this.props.mark,
+      id: item.id
+    }
+    changeArticle(article);
+    window.location.href = './article'
+  }
+
   render() {
     const data = this.props.data;
-
+    
     return(
       // 列表模板1
       <main className="show-lists-block">
@@ -14,7 +25,7 @@ export default class Template1 extends Component {
           { data.map((item, i) => {
             return(
               <li key={i} className="template1-item-block">
-                <a href="/article">
+                <a href="/article" >
                   <div className="template1-item-container">
                     <h1>{ item.title }</h1>
                     <div className="template1-item-description clearfix">
@@ -40,3 +51,4 @@ export default class Template1 extends Component {
     )
   }
 }
+

@@ -4,6 +4,7 @@ import './index.css';
 
 import Template1 from '../template/template1';
 import Template2 from '../template/template2';
+import Article from '../article';
 
 export default class ArticleList extends Component {
   constructor(props) {
@@ -129,10 +130,10 @@ export default class ArticleList extends Component {
     switch(template) {
       case 1:
         showData = dataList.slice(offset, show)
-        return <Template1 data={ showData }/>
+        return <Template1 data={ showData } mark={state.mark}/>
       case 2:
         showData = dataList.slice(offset, 8)
-        return <Template2 data={ showData } typeName={ data.title }/>
+        return <Template2 data={ showData } typeName={ data.title } mark={state.mark}/>
     }
   }
 
