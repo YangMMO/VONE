@@ -29,6 +29,10 @@ export default class ArticleList extends Component {
     this._countPage()
   }
 
+  /**
+   * 初始化列表页数
+   * @memberof ArticleList
+   */
   _countPage() {
     const data = this.props.data;
     const total = data.lists.length;
@@ -41,6 +45,11 @@ export default class ArticleList extends Component {
     })
   }
   
+  /**
+   * 页数输入框change
+   * @param {Object} event
+   * @memberof ArticleList
+   */
   handleonChangePage(event) {
     const value = event.target.value;
     if(!isNaN(value) && value !== '' && value !== '0') {
@@ -48,6 +57,11 @@ export default class ArticleList extends Component {
     }
   }
 
+  /**
+   * 回车事件
+   * @param {Object} event
+   * @memberof ArticleList
+   */
   handleonKeyUpPage(event) {
     const keyCode = event.keyCode;
 
@@ -63,6 +77,10 @@ export default class ArticleList extends Component {
     }
   }
 
+  /**
+   * 输入框失去焦点
+   * @memberof ArticleList
+   */
   handleonBlurPage() {
     if (this.state.pageVal !== '' &&
         this.state.pageVal < this.state.page) {
@@ -71,6 +89,10 @@ export default class ArticleList extends Component {
     this.setState({ pageVal: ''})
   }
 
+  /**
+   * 上一页
+   * @memberof ArticleList
+   */
   handleonClickPagePrev() {
     const curPage = this.state.curPage;
     if(curPage > 1) {
@@ -78,6 +100,10 @@ export default class ArticleList extends Component {
     }
   }
 
+  /**
+   * 下一页
+   * @memberof ArticleList
+   */
   handleonClickPageNext() {
     const page = this.state.page;
     const curPage = this.state.curPage;
@@ -86,6 +112,12 @@ export default class ArticleList extends Component {
     }
   }
 
+  /**
+   * 返回模板
+   * @param {Number|String} template
+   * @returns Template
+   * @memberof ArticleList
+   */
   handleSwitchCase(template) {
     const data = this.props.data;
     const dataList = data.lists;
@@ -121,7 +153,6 @@ export default class ArticleList extends Component {
           </a>
           <input 
             type="text"
-            ref={this.input = React.createRef()}
             onChange={this.handleonChangePage.bind(this)}
             onKeyUp={this.handleonKeyUpPage.bind(this)}
             onBlur={this.handleonBlurPage.bind(this)}
@@ -146,8 +177,10 @@ export default class ArticleList extends Component {
             </button>
           </a>
           <input 
-            type="text" 
-            onChange={this.handleonChangePage.bind(this)} 
+            type="text"
+            onChange={this.handleonChangePage.bind(this)}
+            onKeyUp={this.handleonKeyUpPage.bind(this)}
+            onBlur={this.handleonBlurPage.bind(this)}
             value={state.pageVal}
             placeholder={ state.page ? `${state.curPage}/${state.page}` : '0/0' }/>
           <a href="#page-block">

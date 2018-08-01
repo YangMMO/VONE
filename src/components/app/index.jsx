@@ -9,6 +9,7 @@ import { FOOTER_LISTS } from '../../data/footer-data';
 
 import Home from '../home/index';
 import Plate from '../plate/index';
+import Article from '../article/index';
 
 import Footer from './footer/index';
 
@@ -133,6 +134,9 @@ export default class App extends Component {
           <Route path="/jobs" component={Plate} />
           <Route path="/client" component={Plate} />
           <Route path="/about" component={Plate} />
+
+          <NavLink to="/article"></NavLink>
+          <Route path="/article" component={Article} />
 
           <Footer data={ footer_lists }/>
         </div>

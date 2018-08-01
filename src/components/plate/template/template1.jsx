@@ -14,7 +14,7 @@ export default class Template1 extends Component {
           { data.map((item, i) => {
             return(
               <li key={i} className="template1-item-block">
-                <a href="">
+                <a href="/article">
                   <div className="template1-item-container">
                     <h1>{ item.title }</h1>
                     <div className="template1-item-description clearfix">
@@ -31,9 +31,10 @@ export default class Template1 extends Component {
                     </div>
                   </div>
                 </a>
+
               </li>
             )
-          })}
+          })}    
         </ul>
       </main>
     )
