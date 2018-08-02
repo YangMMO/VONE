@@ -11,10 +11,10 @@ export default class Article extends Component {
     this.state = {
       data: [],
       articleData: [],
-      showDate: [],
+      showData: [],
       showArticle: 0,
       page: 0,
-      cur: 0,
+      curPage: 1,
       showNum: 4
     }
   }
@@ -25,24 +25,68 @@ export default class Article extends Component {
     const total = articleData.length;
     const page = Math.ceil(total / this.state.showNum);
 
-    const showDate = articleData.slice(0, this.state.showNum)
+    const showData = articleData.slice(0, this.state.showNum)
 
     this.setState({ 
       data: require(`../../data/plate/news-data.js`),
       articleData: articleData,
       showArticle: articleData[0],
-      shiowData: showDate,
+      showData: showData,
       page: page
     })
+  }
+
+  /**
+   * 上一页
+   * @memberof ArticleList
+   */
+  handleonClickPagePrev() {
+    const state = this.state;
+    const articleData = state.articleData;
+    const page = state.page;
+    const showNum = state.showNum;
+    const curPage = state.curPage;
+
+    if(curPage > 1) {
+      const showData = articleData.slice(curPage * showNum - showNum * 2, curPage * showNum - showNum);
+      this.setState({ 
+        curPage: curPage - 1,
+        showData: showData
+      })
+    }
+
+  }
+
+  /**
+   * 下一页
+   * @memberof ArticleList
+   */
+  handleonClickPageNext() {
+    const state = this.state;
+    const articleData = state.articleData;
+    const page = state.page;
+    const showNum = state.showNum;
+    const curPage = state.curPage;
+
+    if(curPage < page) {
+      const showData = articleData.slice(showNum * curPage, showNum * (curPage + 1));
+      this.setState({ 
+        curPage: curPage + 1,
+        showData: showData
+      })
+    }
+  }
+
+  handleShowDate(data) {
+    console.log(data)
   }
 
   render() {
     const state = this.state;
     const data = state.data;
     const show = state.showArticle;
-    const shiowData = state.shiowData;
+    const showData = state.showData;
     const headerData = JSON.parse(data.HEADER);
-
 
     return(
         // 文章页面模板
@@ -55,15 +99,19 @@ export default class Article extends Component {
             </article>
             <div className="page-center article-lists">
               <h1>
-                <button><i className="iconfont icon-jiantou1"></i></button>
+                <button onClick={this.handleonClickPagePrev.bind(this)}>
+                  <i className="iconfont icon-jiantou1"></i>
+                </button>
                 近期资讯
-                <button><i className="iconfont icon-jiantou1"></i></button>
+                <button onClick={this.handleonClickPageNext.bind(this)}>
+                  <i className="iconfont icon-jiantou1"></i>
+                </button>
               </h1>
               <ul className="clearfix">
-                { shiowData.map((item, i) => {
+                { showData.map((item, i) => {
                   return (
                     <li key={ i }>
-                      <article>
+                      <a href="">
                         <div 
                           className={item.image ? '' : 'template1-item-not-show'}
                           style={{
@@ -71,7 +119,7 @@ export default class Article extends Component {
                           }}></div>
                         <h5>{item.title}</h5>
                         <span>详细内容<i className="iconfont icon-jiantou"></i></span>
-                      </article>
+                      </a>
                     </li>
                   )
                 }) }

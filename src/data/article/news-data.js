@@ -132,7 +132,7 @@ module.exports.ARTICLEDATA = JSON.stringify([
     title: '泛网受邀参加“第三届邮轮管理课程研修班”',
     description: '2018年7月21日上午，泛网受邀参加上海海事大学亚洲邮轮学院“第三届邮轮管理课程研修班”。来自全国各地，邮轮产业各领域的70余名学员进行为期一周的课程研修。',
     image: '322850ec658192f383c0f3faa9995b74.jpg',
-    content: '内容完善'
+    content: '<p style="text-align:center;">2018年7月21日上午，泛网受邀参加上海海事大学亚洲邮轮学院“第三届邮轮管理课程研修班”。来自全国各地，邮轮产业各领域的70余名学员进行为期一周的课程研修。</p><p style="text-align:center;"><br></p><p style="text-align:center;"><img src="src/images/article/2e9ef09f53a8f2675fd829a5dd1a3bfc.jpg" width="600" height="337" alt=""> </p><p style="text-align:center;"><br></p><p style="text-align:center;">泛网科技范道总经理在此次课程研修班做了精彩的演讲。作为IT资深技术专家，范道总经理将自身多年的邮轮IT专业技术管理经验与学员们分享，并深入分析邮轮与港口信息化国际趋势以及介绍邮轮管理系统。</p><p style="text-align:center;"><br></p><p style="text-align:center;"><img src="src/images/article/722ffe2623fb2a1e57aa250cd8c2196a.jpg" width="600" height="400" alt=""> </p><p style="text-align:center;"><br></p><p style="text-align:center;">刘斌院长为范道总经理颁发邮轮管理高级研修班演讲嘉宾聘书。</p><p style="text-align:center;"><br></p><p style="text-align:center;"><img src="src/images/article/322850ec658192f383c0f3faa9995b74.jpg" width="600" height="400" alt=""> </p><p style="text-align:center;"><br></p><p style="text-align:center;">此次邮轮管理课程研修班，旨在深入了解分享邮轮产业的最新状态与趋势，深入了解邮轮公司、邮轮港口运营规律和我国邮轮市场发展战略。为推动中国邮轮产业的发展出谋献策。</p><p style="text-align:center;"><br></p><p style="text-align:center;"><img src="src/images/article/95ec55b5aae3f21d833651d3d8744d7a.png" width="600" height="338" alt=""> </p><p style="text-align:center;"><br></p><p style="text-align:center;"><img src="src/images/article/c8f155b2309a9f0a810531b93765441a.jpg" width="600" height="338" alt=""> </p>'
   }, {
     id: 17,
     title: '毕升集团与CR Software签订代理协议，将赛马游戏带入中国市场',

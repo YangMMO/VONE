@@ -71,28 +71,29 @@
   padding-right: 0
 }
 
-.article-lists ul li article div {
+.article-lists ul li a div {
   height: 200px;
   width: 100%;
   background-size: cover;
   background-position: center;
 }
 
-.article-lists ul li article h5 {
+.article-lists ul li a h5 {
   margin: calc(30px - .6rem) 0;
   font-size: 1.6rem;
   line-height: 3.2rem;
+  color: #555;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.article-lists ul li article span {
+.article-lists ul li a span {
   font-size: 1.8rem;
   color: #ff9000;
 }
 
-.article-lists ul li article span i {
+.article-lists ul li a span i {
   margin-left: 10px;
 }
