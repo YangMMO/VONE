@@ -117,10 +117,10 @@ export default class Article extends Component {
 
     return(
         // 文章页面模板
-        <div>
+        <div className="pale_block">
           <PlateHeader data={ headerData }/>
           <div className="article-template">
-            <article className="page-center article-template-container">
+            <article className="page-center article-template-container item-show-wdith">
               <h1>{show.title}</h1>
               <div dangerouslySetInnerHTML={{ __html: show.content }}></div>
             </article>

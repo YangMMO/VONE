@@ -8,6 +8,7 @@ export default class PlateHeader extends Component {
     super(props)
     this.state = {
       rigthImageWidth: 0,
+      bodyClientWidth: 0
     }
   }
 
@@ -17,7 +18,8 @@ export default class PlateHeader extends Component {
     const bodyClientWidth = document.body.clientWidth;
 
     this.setState({
-      rigthImageWidth: bodyClientWidth - offsetLeft,
+      rigthImageWidth: bodyClientWidth > 980 ? bodyClientWidth - offsetLeft : '100%',
+      bodyClientWidth: bodyClientWidth
     })
     
     window.addEventListener('resize', Scaffold.debounce((event) => {
@@ -45,7 +47,8 @@ export default class PlateHeader extends Component {
     offsetLeft = img.offsetLeft;
 
     this.setState({
-      rigthImageWidth: bodyClientWidth - offsetLeft,
+      rigthImageWidth: bodyClientWidth > 980 ? bodyClientWidth - offsetLeft : '100%',
+      bodyClientWidth: bodyClientWidth
     })
   }
   
@@ -56,7 +59,7 @@ export default class PlateHeader extends Component {
 
     return(
       <div style={{backgroundColor: `${data.color}`}}>
-        <div className="page-center item-grid">
+        <div className="page-center item-grid item-show-wdith">
           <div className="item-container-block">
               <div className="container-block">
                 { data.header.icon ? <i className={`container-icon ${data.header.icon}`}></i> : '' }

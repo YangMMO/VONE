@@ -2,7 +2,7 @@ var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var pathsToClean = [
     'dist'
@@ -51,7 +51,7 @@ module.exports = {
             from: 'src/data',
             to: 'src/data'
         }]),
-        new ExtractTextPlugin("css/styles.css"),
+        // new ExtractTextPlugin("css/styles.css"),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             filename: 'index.html'

@@ -28,6 +28,7 @@
   padding: 0 25px;
   width: 100%;
   color: #999;
+  transition: all 200ms;
 }
 
 .nav-lists li{
@@ -224,3 +225,4 @@
   margin-right: 20px;
   font-size: 2.8rem;
 }
+

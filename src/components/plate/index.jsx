@@ -123,7 +123,7 @@ export default class Plate extends Component {
 
     return(
         // 板块页面模板
-        <div>
+        <div className="pale_block">
           <PlateHeader data={ headerData }/>
           <main className="page-center main-gird">
             <section className="section-container">

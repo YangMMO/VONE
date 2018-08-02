@@ -15,6 +15,17 @@ import Footer from './footer/index';
 
 export default class App extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      active: false
+    }
+  }
+
+  handleActiveNav () {
+    this.setState({ active: !this.state.active })
+  }
+
   render() {
     const nav_lists = JSON.parse(NAV_LISTS);
     const funcs = JSON.parse(FUNCS);
@@ -25,74 +36,77 @@ export default class App extends Component {
       <BrowserRouter>
         <div>
           {/* {nav 导航列表} */}
-          <nav className="nav-block page-center">
+          <nav className="nav-block page-center" id="nav">
+            <h1>{this.state.active ? '菜单' : ''}</h1>
+            <i className="iconfont icon-caidan" onClick={this.handleActiveNav.bind(this)}></i>
             {/* {logo} */}
-            <NavLink to="/">
+            <NavLink to="/" style={{ display: this.state.active ? 'none' : 'block'}}>
               <div className="nav-logo">
                 <img src={require('../../images/LOGO.png')} alt="index"/>
               </div>
             </NavLink>
             {/* 一级菜单 */}
-            <ul className="nav-lists">
-              { nav_lists.map((item, i) => {
-                return (
-                  <li key={i} className="nav-item-block">
-                    <NavLink to={ item.pathname }>{ item.title }</NavLink>
-                    <div className="nav-item-container">
-                      {/* 二级菜单 */}
-                      <ul>
-                        { item.lists.map((navItem, i) => {
-                          // 三级菜单判断
-                          if(navItem.lists) {
-                            // 三级菜单有列表
+            <div className={this.state.active ? 'active-block' : ''}>
+              <ul className={`nav-lists ${this.state.active ? 'active-nav' : ''}`}>
+                { nav_lists.map((item, i) => {
+                  return (
+                    <li key={i} className="nav-item-block">
+                      <NavLink to={ item.pathname }>{ item.title }</NavLink>
+                      <div className="nav-item-container">
+                        {/* 二级菜单 */}
+                        <ul>
+                          { item.lists.map((navItem, i) => {
+                            // 三级菜单判断
+                            if(navItem.lists) {
+                              // 三级菜单有列表
+                              return(
+                                <li key={ i } className="nav-more">
+                                  <a href={ navItem.pathname }>
+                                    { navItem.title }
+                                    <i className="nav-more-icon"></i>
+                                  </a>
+                                  <div className="nav-item-more-container">
+                                    <a href={ navItem.pathname }>
+                                      <h1>
+                                        <i className="iconfont icon-jiantou"></i>系统概览
+                                      </h1>
+                                    </a>
+                                    {/* 三级菜单 */}
+                                    <ul>
+                                      { navItem.lists.map((listItem, i) => {
+                                        return(
+                                          <li key={ i }>
+                                            <a href={ navItem.pathname }>
+                                              <i className={ listItem.icon }></i>
+                                              { listItem.title }
+                                            </a>
+                                          </li>
+                                        )
+                                      })
+                                      }
+                                    </ul>
+                                  </div>
+                                </li>
+                              )
+                            }
+
+                            // 三级菜单无列表
                             return(
-                              <li key={ i } className="nav-more">
+                              <li key={ i } className="nav-not-more">
                                 <a href={ navItem.pathname }>
                                   { navItem.title }
-                                  <i className="nav-more-icon"></i>
                                 </a>
-                                <div className="nav-item-more-container">
-                                  <a href={ navItem.pathname }>
-                                    <h1>
-                                      <i className="iconfont icon-jiantou"></i>系统概览
-                                    </h1>
-                                  </a>
-                                  {/* 三级菜单 */}
-                                  <ul>
-                                    { navItem.lists.map((listItem, i) => {
-                                      return(
-                                        <li key={ i }>
-                                          <a href={ navItem.pathname }>
-                                            <i className={ listItem.icon }></i>
-                                            { listItem.title }
-                                          </a>
-                                        </li>
-                                      )
-                                    })
-                                    }
-                                  </ul>
-                                </div>
                               </li>
                             )
-                          }
-
-                          // 三级菜单无列表
-                          return(
-                            <li key={ i } className="nav-not-more">
-                              <a href={ navItem.pathname }>
-                                { navItem.title }
-                              </a>
-                            </li>
-                          )
-                        })
-                      }</ul>
-                    </div>
-                  </li>
-              )}) }
-            </ul>
-
+                          })
+                        }</ul>
+                      </div>
+                    </li>
+                )}) }
+              </ul>
+           
             {/* 功能菜单 */}
-            <ul className="nav-funcs">
+            <ul className={ `nav-funcs ${this.state.active ? 'active-nav' : ''}` }>
               { funcs.map((item, i) => {
                 if (item.isfollow) {
                   return(
@@ -126,6 +140,7 @@ export default class App extends Component {
                 )
               }) }
             </ul>
+            </div>
           </nav> 
           <Route exact path="/" component={Home}/>
           <Route path="/product" component={Plate}/>

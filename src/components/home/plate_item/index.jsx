@@ -10,7 +10,8 @@ export default class PlateItem extends Component {
       leftImageWidth: 0,
       rigthImageWidth: 0,
       containerWidth: 0,
-      imageLeft: 0
+      imageLeft: 0,
+      bodyClientWidth: 0
     }
   }
 
@@ -25,10 +26,11 @@ export default class PlateItem extends Component {
     const bodyClientWidth = document.body.clientWidth;
 
     this.setState({
-      leftImageWidth: offsetLeft + imageClientWidth,
-      rigthImageWidth: bodyClientWidth - offsetLeft,
+      leftImageWidth: bodyClientWidth > 980 ? offsetLeft + imageClientWidth : '100%',
+      rigthImageWidth: bodyClientWidth > 980 ? bodyClientWidth - offsetLeft : '100%',
       containerWidth: containerClientWidth - 8,
-      imageLeft: offsetLeft
+      imageLeft: bodyClientWidth > 980 ? offsetLeft : 0,
+      bodyClientWidth: bodyClientWidth
     })
 
     window.addEventListener('resize', Scaffold.debounce((event) => {
@@ -58,10 +60,11 @@ export default class PlateItem extends Component {
     const bodyClientWidth = document.body.clientWidth;
 
     this.setState({
-      leftImageWidth: offsetLeft + imageClientWidth,
-      rigthImageWidth: bodyClientWidth - offsetLeft,
+      leftImageWidth: bodyClientWidth > 980 ? offsetLeft + imageClientWidth : '100%',
+      rigthImageWidth: bodyClientWidth > 980 ? bodyClientWidth - offsetLeft : '100%',
       ContainerWidth: containerClientWidth,
-      imageLeft: offsetLeft
+      imageLeft: bodyClientWidth > 980 ? offsetLeft : 0,
+      bodyClientWidth: bodyClientWidth
     })
   }
 

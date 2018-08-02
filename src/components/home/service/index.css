@@ -16,6 +16,7 @@
   display: block;
   margin: 0 auto;
   width: 71%;
+  transition: all 200ms;
 }
 
 .service-gird h1 {
