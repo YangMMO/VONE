@@ -4,7 +4,6 @@ import './index.css';
 
 import Template1 from '../template/template1';
 import Template2 from '../template/template2';
-import Article from '../article';
 
 export default class ArticleList extends Component {
   constructor(props) {

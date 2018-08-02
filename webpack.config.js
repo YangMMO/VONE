@@ -1,6 +1,13 @@
 var path = require('path');
-var webpack = require('webpack')
+var CleanWebpackPlugin = require('clean-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var pathsToClean = [
+    'dist'
+]
+
 module.exports = {
     entry: './src/index.jsx',
     output: {
@@ -36,6 +43,15 @@ module.exports = {
         }],
     },
     plugins: [
+        new CleanWebpackPlugin(pathsToClean),
+        new CopyWebpackPlugin([{
+            from: 'src/images',
+            to: 'src/images'
+        }, {
+            from: 'src/data',
+            to: 'src/data'
+        }]),
+        new ExtractTextPlugin("css/styles.css"),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             filename: 'index.html'
