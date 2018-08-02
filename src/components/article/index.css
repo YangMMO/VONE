@@ -72,10 +72,10 @@
 }
 
 .article-lists ul li a div {
-  height: 200px;
   width: 100%;
   background-size: cover;
   background-position: center;
+  transition: all 200ms;
 }
 
 .article-lists ul li a h5 {

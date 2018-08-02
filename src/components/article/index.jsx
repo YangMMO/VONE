@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Scaffold from 'mmo-adam';
 
 import './index.css';
 
@@ -15,7 +16,8 @@ export default class Article extends Component {
       showArticle: 0,
       page: 0,
       curPage: 1,
-      showNum: 4
+      showNum: 4,
+      imageHeight: 0
     }
   }
 
@@ -34,6 +36,31 @@ export default class Article extends Component {
       showData: showData,
       page: page
     })
+  }
+
+  componentDidMount() {
+
+
+    this._resizeChange()
+
+    window.addEventListener('resize', Scaffold.debounce((event) => {
+      this._resizeChange()
+    }, 0))
+  }
+
+  _resizeChange() {
+    let imageBlock = this.imageBlock;
+    if (!imageBlock.current) {
+      return
+    }
+    
+    const width = imageBlock.current.offsetWidth;
+    const height = width * 0.66;
+
+    this.setState({
+      imageHeight: height
+    })
+
   }
 
   /**
@@ -113,9 +140,11 @@ export default class Article extends Component {
                     <li key={ i }>
                       <a href="">
                         <div 
+                          ref={ this.imageBlock = React.createRef()}
                           className={item.image ? '' : 'template1-item-not-show'}
                           style={{
-                            backgroundImage: item.image ? `url(${require(`../../images/article/${item.image}`)})` : ''
+                            backgroundImage: item.image ? `url(${require(`../../images/article/${item.image}`)})` : '',
+                            height: state.imageHeight ? state.imageHeight : 0
                           }}></div>
                         <h5>{item.title}</h5>
                         <span>详细内容<i className="iconfont icon-jiantou"></i></span>
