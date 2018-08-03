@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, NavLink } from "react-router-dom";
+import Scaffold from 'mmo-adam';
 
 import './index.css';
 import './nav.css';
@@ -18,11 +19,22 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      active: false
+      active: false,
+      width: 0
     }
   }
 
+  componentWillMount() {
+    this.setState({ width: document.body.clientWidth });
+    window.addEventListener('resize', Scaffold.debounce((event) => {
+      this.setState({ width: document.body.clientWidth });
+    }, 0))
+  }
+
   handleActiveNav () {
+    if (this.state.width > 980) {
+      return
+    }
     this.setState({ active: !this.state.active })
   }
 
@@ -37,7 +49,7 @@ export default class App extends Component {
         <div>
           {/* {nav 导航列表} */}
           <nav className="nav-block page-center" id="nav">
-            <h1>{this.state.active ? '菜单' : ''}</h1>
+            {this.state.active ? <h1>菜单</h1> : ''}
             <i className="iconfont icon-caidan" onClick={this.handleActiveNav.bind(this)}></i>
             {/* {logo} */}
             <NavLink to="/" style={{ display: this.state.active ? 'none' : 'block'}}>
@@ -46,12 +58,12 @@ export default class App extends Component {
               </div>
             </NavLink>
             {/* 一级菜单 */}
-            <div className={this.state.active ? 'active-block' : ''}>
-              <ul className={`nav-lists ${this.state.active ? 'active-nav' : ''}`}>
+            <div className={this.state.active ? 'active-block' : ''} >
+              <ul className={`nav-lists  ${this.state.active ? 'active-nav' : ''}`}>
                 { nav_lists.map((item, i) => {
                   return (
                     <li key={i} className="nav-item-block">
-                      <NavLink to={ item.pathname }>{ item.title }</NavLink>
+                      <NavLink to={ item.pathname } onClick={this.handleActiveNav.bind(this)}>{ item.title }</NavLink>
                       <div className="nav-item-container">
                         {/* 二级菜单 */}
                         <ul>

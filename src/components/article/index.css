@@ -6,6 +6,7 @@
 .article-lists h1 {
   font-size: 2.8rem;
   text-align: center;
+  transition: all 200ms;
 }
 
 
@@ -40,6 +41,7 @@
   background-color: #fff;
   border: 0;
   cursor: pointer;
+  transition: all 200ms;
 }
 
 .article-lists h1 button i {

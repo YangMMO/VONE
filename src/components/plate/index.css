@@ -39,6 +39,7 @@
   vertical-align: middle;
   margin: 0 20px;
   font-size: 2.8rem;
+  transition: all 200ms;
 }
 
 .sort-container[data-template="1"] ul li a {

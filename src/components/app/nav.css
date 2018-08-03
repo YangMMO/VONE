@@ -2,6 +2,7 @@
   width: 100%;
   height: 100px;
   /* overflow: hidden; */
+  transition: all 200ms;
 }
 
 
@@ -14,6 +15,10 @@
   margin: 32px 40px 0 0;
   width: 152px;
   height: 36px;
+}
+
+.nav-logo img {
+  height: 100%;
 }
 
 .nav-lists > li,
@@ -114,6 +119,7 @@
 /* lists */
 .nav-logo, .nav-lists {
   float: left; 
+  transition: all 200ms;
 }
 
 .nav-item-container,

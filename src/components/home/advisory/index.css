@@ -12,6 +12,7 @@
 .advisory-block .advisoty-container ul {
   /* padding: 0 40px; */
   width: calc(100% / 2 - 160px);
+  transition: all 200ms;
 }
 
 .advisory-block .advisoty-container ul:first-child,
@@ -90,6 +91,7 @@
   padding: 10px 15px 10px 10px;
   margin: 0 15px;
   color: #999;
+  transition: all 200ms;
 }
 
 .follow span:hover {
@@ -109,6 +111,7 @@
   font-size: 1.8rem;
   color: #fff;
   cursor: pointer;
+  transition: all 200ms;
 }
 
 .follow button:hover {
