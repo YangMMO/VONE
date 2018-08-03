@@ -23,6 +23,20 @@
   /* transition: all .2s linear; */
 }
 
+.item-block:nth-child(odd) .item-container-block {
+  padding-right: 0;
+  padding-left: 10%;
+}
+
+
+/* .item-block:nth-child(odd) .item-grid .container-block {
+  padding-left: 10%;
+}
+
+.item-block:nth-child(even) .item-grid .container-block {
+  padding-left: 10%;
+} */
+
 /* .image-block img {
   display: flex;
   width: 100%;
