@@ -234,6 +234,10 @@
     max-width: 85%;
   }
 
+  .item-block:nth-child(odd) .item-container-block {
+    padding: 0;
+  }
+
   .service-gird {
     display: block;
   }
